@@ -75,6 +75,7 @@ private double diezmo;
     }
 
 //public void asignarDiezmo(String){
+    /*hola*/
 
 
 }
