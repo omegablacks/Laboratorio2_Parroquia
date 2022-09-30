@@ -81,6 +81,11 @@ public class Vista extends javax.swing.JFrame {
         });
 
         eliminarBtn.setText("Eliminar");
+        eliminarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarBtnActionPerformed(evt);
+            }
+        });
 
         estadoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,8 +94,18 @@ public class Vista extends javax.swing.JFrame {
         });
 
         actualizarBtn.setText("Actualizar");
+        actualizarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarBtnActionPerformed(evt);
+            }
+        });
 
         buscarBtn.setText("Buscar");
+        buscarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,10 +187,25 @@ public class Vista extends javax.swing.JFrame {
         jLabel8.setText("Valor Diezmo*");
 
         consultarBtn.setText("Consultar");
+        consultarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultarBtnActionPerformed(evt);
+            }
+        });
 
         pagarBtn.setText("Pagar");
+        pagarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pagarBtnActionPerformed(evt);
+            }
+        });
 
         totalizarBtn.setText("Totalizar");
+        totalizarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                totalizarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -285,6 +315,30 @@ public class Vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoTxtActionPerformed
 
+    private void eliminarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarBtnActionPerformed
+
+    private void buscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buscarBtnActionPerformed
+
+    private void actualizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarBtnActionPerformed
+
+    private void consultarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_consultarBtnActionPerformed
+
+    private void pagarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pagarBtnActionPerformed
+
+    private void totalizarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalizarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_totalizarBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -321,15 +375,15 @@ public class Vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton actualizarBtn;
+    public javax.swing.JButton actualizarBtn;
     private javax.swing.JButton buscarBtn;
     private javax.swing.JTextField cedulaTxt;
     private javax.swing.JButton consultarBtn;
     private javax.swing.JTextField direccionTxt;
-    private javax.swing.JButton eliminarBtn;
+    public javax.swing.JButton eliminarBtn;
     private javax.swing.JTextField estadoTxt;
     private javax.swing.JTextField estratoTxt;
-    private javax.swing.JButton guardarBtn;
+    public javax.swing.JButton guardarBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
