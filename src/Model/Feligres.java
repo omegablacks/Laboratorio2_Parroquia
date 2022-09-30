@@ -74,7 +74,7 @@ private double diezmo;
         this.diezmo = diezmo;
     }
 
-
+//public void asignarDiezmo(String){
 
 
 }
