@@ -1,26 +1,26 @@
 
 package Model;
 
-import java.util.Objects;
-
-public class Feligres extends Diezmo{
+public class Feligres{
     private String cedula;
     private String nombre;
     private String direccion;
     private String telefono;
     private int estrato;
     private String estado;
+    protected int valor;
 
     public Feligres() {
     }
 
-    public Feligres(String cedula, String nombre, String direccion, String telefono, int estrato, String estado) {
+    public Feligres(String cedula, String nombre, String direccion, String telefono, int estrato, String estado, int valor) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.estrato = estrato;
         this.estado = estado;
+        this.valor=valor;
     }
 
     public String getCedula() {
@@ -71,6 +71,14 @@ public class Feligres extends Diezmo{
         this.estado = estado;
     }
     
+    public int getValor() {
+        return valor;
+    }
+
+    public void setValor(int valor) {
+        this.valor = valor;
+    }
+    
     public void controlDiezmos(){
         if (estrato==1){
             valor=250000;
@@ -79,7 +87,16 @@ public class Feligres extends Diezmo{
             valor=500000;
             System.out.println(valor);
 
-        } else valor=1000000; System.out.println(valor);
+        } else if (estrato>3){
+            valor=1000000; 
+            System.out.println(valor);
+        }else System.out.print("El Estrato Debe Ser Mayor A 0");
+    }
+    
+    public int TotalDiezmo(){
+        int TotalDiezmo=0;
+        TotalDiezmo=TotalDiezmo+this.valor;
+        return TotalDiezmo;
     }
     
 }
