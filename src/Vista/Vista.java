@@ -53,8 +53,6 @@ public class Vista extends javax.swing.JFrame {
         pagarBtn = new javax.swing.JButton();
         totalizarBtn = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        resultadosTxtArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -260,23 +258,15 @@ public class Vista extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultados"));
 
-        resultadosTxtArea.setBackground(new java.awt.Color(255, 204, 204));
-        resultadosTxtArea.setColumns(20);
-        resultadosTxtArea.setRows(5);
-        jScrollPane1.setViewportView(resultadosTxtArea);
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+            .addGap(0, 249, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+            .addGap(0, 107, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -395,11 +385,9 @@ public class Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nombreTxt;
     private javax.swing.JButton pagarBtn;
     private javax.swing.JTextField rdiezgoCedulaTxt;
-    private javax.swing.JTextArea resultadosTxtArea;
     private javax.swing.JTextField telefonoTxt;
     private javax.swing.JButton totalizarBtn;
     private javax.swing.JTextField valorDiezmoTxt;

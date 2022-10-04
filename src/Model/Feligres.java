@@ -8,7 +8,8 @@ public class Feligres{
     private String telefono;
     private int estrato;
     private String estado;
-    protected int valor;
+    private int valor;
+    int TotalDiezmo=0;
 
     public Feligres() {
     }
@@ -94,8 +95,7 @@ public class Feligres{
     }
     
     public int TotalDiezmo(){
-        int TotalDiezmo=0;
-        TotalDiezmo=TotalDiezmo+this.valor;
+        TotalDiezmo=TotalDiezmo+ valor;
         return TotalDiezmo;
     }
     
