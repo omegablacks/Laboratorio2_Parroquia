@@ -99,11 +99,11 @@ public class Feligres{
     }
     
     public int totalDiezmo(){
-        totalDiezmo = totalDiezmo+ valor;
+        totalDiezmo = totalDiezmo+ getValor();
         return totalDiezmo;
     }
     
-    public int totalDiezmoPagado(){
+    public int totalDiezmoPagado(int valor){
         totalDiezmo = totalDiezmo+ valor;
         return totalDiezmo;
     }
