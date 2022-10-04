@@ -9,7 +9,11 @@ public class Feligres{
     private int estrato;
     private String estado;
     private int valor;
-    int TotalDiezmo=0;
+    
+    int totalDiezmo=0;
+    int diezmoPagado=0;
+    int deuda;
+    int contador=0;
 
     public Feligres() {
     }
@@ -94,9 +98,19 @@ public class Feligres{
         }else System.out.print("El Estrato Debe Ser Mayor A 0");
     }
     
-    public int TotalDiezmo(){
-        TotalDiezmo=TotalDiezmo+ valor;
-        return TotalDiezmo;
+    public int totalDiezmo(){
+        totalDiezmo = totalDiezmo+ valor;
+        return totalDiezmo;
+    }
+    
+    public int totalDiezmoPagado(){
+        totalDiezmo = totalDiezmo+ valor;
+        return totalDiezmo;
+    }
+    
+    public int totalDiezmoDeuda(){
+        
+        return deuda;
     }
     
 }
