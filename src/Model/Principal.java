@@ -5,6 +5,7 @@
 package Model;
 
 import Control.Control;
+import Vista.Vista;
 
 /**
  *
@@ -12,8 +13,12 @@ import Control.Control;
  */
 
 public class Principal {
-
     public static void main(String[] args) {
-        Control control = new Control();
+        Vista vista= new Vista();
+        Feligres f= new Feligres();
+        Iglesia i= new Iglesia();
+        Control control = new  Control(vista, f, i);
+        vista.setVisible(true);
     }
+    
 }

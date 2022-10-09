@@ -6,26 +6,23 @@ public class Feligres{
     private String nombre;
     private String direccion;
     private String telefono;
-    private int estrato;
+    private String estrato;
     private String estado;
-    private int valor;
-    
-    int totalDiezmo=0;
-    int diezmoPagado=0;
-    int deuda;
-    int contador=0;
+    private Integer diezmo;
+    private static Integer totalizar = 0;
+    private int cont = 0;
 
     public Feligres() {
     }
 
-    public Feligres(String cedula, String nombre, String direccion, String telefono, int estrato, String estado, int valor) {
+    public Feligres(String cedula, String nombre, String direccion, String telefono, String estrato, String estado) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.estrato = estrato;
         this.estado = estado;
-        this.valor=valor;
+
     }
 
     public String getCedula() {
@@ -60,11 +57,11 @@ public class Feligres{
         this.telefono = telefono;
     }
 
-    public int getEstrato() {
+    public String getEstrato() {
         return estrato;
     }
 
-    public void setEstrato(int estrato) {
+    public void setEstrato(String estrato) {
         this.estrato = estrato;
     }
 
@@ -75,42 +72,92 @@ public class Feligres{
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    public int getValor() {
-        return valor;
+
+    public Integer getDiezmo() {
+        return diezmo;
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    public void setDiezmo(Integer diezmo) {
+        this.diezmo = diezmo;
     }
-    
-    public void controlDiezmos(){
-        if (estrato==1){
-            valor=250000;
-            System.out.println(valor);
-        } else if (estrato==2 || estrato==3) {
-            valor=500000;
-            System.out.println(valor);
 
-        } else if (estrato>3){
-            valor=1000000; 
-            System.out.println(valor);
-        }else System.out.print("El Estrato Debe Ser Mayor A 0");
+    public Integer getTotalizar() {
+        return totalizar;
+    }
+
+    public void setTotalizar(Integer totalizar) {
+        this.totalizar = totalizar;
+    }
+
+    public int getCont() {
+        return cont;
+    }
+
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
+
+    @Override
+    public String toString() {
+        return "Feligrese{" + "cedula=" + cedula + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + 
+                    telefono + ", estrato=" + estrato + ", estado=" + estado + ", diezmo=" + diezmo + '}';
     }
     
-    public int totalDiezmo(){
-        totalDiezmo = totalDiezmo+ getValor();
-        return totalDiezmo;
+    public void actualizarDatos(String cedula, String nombre, String direccion, String telefono, String estrato, String estado){
+        if(nombre!=null){
+            this.setNombre(nombre);
+        }
+        if(direccion!=null){
+            this.setDireccion(direccion);
+        }
+        if(telefono!=null){
+            this.setTelefono(telefono);
+        }
+        if(estrato!=null){
+            this.setEstrato(estrato);
+            validarDiesmo();
+        }
+        if(estado!=null){
+            this.setEstado(estado);
+        }
     }
-    
-    public int totalDiezmoPagado(int valor){
-        totalDiezmo = totalDiezmo+ valor;
-        return totalDiezmo;
+
+    public void validarDiesmo() {
+        if (estrato.equals("1")) {
+            diezmo = 250000;
+        }
+        if (estrato.equals("2")) {
+            diezmo = 500000;
+        }
+        if (estrato.equals("3")) {
+            diezmo = 1000000;
+        }
     }
-    
-    public int totalDiezmoDeuda(){
+
+    public String pagarDiezmo() {
         
-        return deuda;
+        
+        StringBuffer sb = new StringBuffer("PAGOS DE DIEZMO IGLESIA SAGRADA FAMILIA\n");
+        if(estado.equals("Deudor")){
+        cont++;
+        totalizar += diezmo;
+        sb.append("Feligres: " + nombre + " Pago: " + diezmo + " N° de pago:" + cont);
+        this.setEstado("Cumplido");
+        }else{
+            sb.append("Esta al dia con la iglesia");
+        }
+        return sb.toString();
+
+    }
+
+    public String totalizar(String cedula) {
+        StringBuffer sb = new StringBuffer("Total De Diezmo\n");
+
+        sb.append(" Total: "+totalizar+"\n" );
+        sb.append("........");
+
+        return sb.toString();
+
     }
     
 }
