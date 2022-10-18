@@ -25,7 +25,7 @@ public class Control implements ActionListener{
         ActionListener(this);
     }
     
-    void jbGuardar(ActionEvent e) {
+    /*void jbGuardar(ActionEvent e) {
     	f.setCedula(vista.txtCedula.getText());
         f.setNombre(vista.txtNombre.getText());
         f.setDireccion(vista.txtDireccion.getText());
@@ -35,7 +35,7 @@ public class Control implements ActionListener{
         f= new Feligres(f.getCedula(), f.getNombre(), f.getDireccion(), f.getTelefono(), f.getEstrato(), f.getEstado());
         i.agregarFeligres(f);
         System.out.println("----------");
-    }
+    }*/
     
     /*@FXML
     void jbBuscar(ActionEvent e) {
