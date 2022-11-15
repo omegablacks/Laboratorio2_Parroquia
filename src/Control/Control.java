@@ -10,7 +10,6 @@ import Vista.Vista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javafx.fxml.FXML;
 
 
 public class Control implements ActionListener{
@@ -24,28 +23,6 @@ public class Control implements ActionListener{
         this.i = i;
         ActionListener(this);
     }
-    
-    /*void jbGuardar(ActionEvent e) {
-    	f.setCedula(vista.txtCedula.getText());
-        f.setNombre(vista.txtNombre.getText());
-        f.setDireccion(vista.txtDireccion.getText());
-        f.setTelefono(vista.txtTelefono.getText());
-        f.setEstrato(vista.txtEstrato.getText());
-        f.setEstado(vista.txtEstado.getText());
-        f= new Feligres(f.getCedula(), f.getNombre(), f.getDireccion(), f.getTelefono(), f.getEstrato(), f.getEstado());
-        i.agregarFeligres(f);
-        System.out.println("----------");
-    }*/
-    
-    /*@FXML
-    void jbBuscar(ActionEvent e) {
-    	Feligres feli= i.buscarFeligres(vista.txtCedula.getText());
-            vista.txtNombre.setText(feli.getNombre());
-            vista.txtTelefono.setText(feli.getTelefono());
-            vista.txtEstrato.setText(feli.getEstrato());
-            vista.txtEstado.setText(feli.getEstado());
-            vista.txtDireccion.setText(feli.getDireccion());
-    }*/
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -57,8 +34,14 @@ public class Control implements ActionListener{
         f.setEstrato(vista.txtEstrato.getText());
         f.setEstado(vista.txtEstado.getText());
         Feligres fe= new Feligres(f.getCedula(), f.getNombre(), f.getDireccion(), f.getTelefono(), f.getEstrato(), f.getEstado());
-        i.agregarFeligres(fe);
-        System.out.println("Guardado");
+        i.agregarFeligres(fe, f.getCedula());
+        
+        vista.txtCedula.setText("");
+        vista.txtNombre.setText("");
+        vista.txtDireccion.setText("");
+        vista.txtTelefono.setText("");
+        vista.txtEstrato.setText("");
+        vista.txtEstado.setText("");
         }
         if(e.getActionCommand().equals("Buscar")){
             Feligres feli= i.buscarFeligres(vista.txtCedula.getText());
@@ -95,6 +78,14 @@ public class Control implements ActionListener{
             String estado=vista.txtEstado.getText();
             feli.actualizarDatos(cedula, nombre, direccion, telefono, estrato, estado);
             
+        }if(e.getActionCommand().equals("Limpiar")){
+            vista.txtCedula.setText("");
+            vista.txtNombre.setText("");
+            vista.txtDireccion.setText("");
+            vista.txtTelefono.setText("");
+            vista.txtEstrato.setText("");
+            vista.txtEstado.setText("");
+            
         }
     }
       
@@ -107,5 +98,6 @@ public class Control implements ActionListener{
         vista.jbPagar.addActionListener(control);
         vista.jbEliminar.addActionListener(control);
         vista.jbActualizar.addActionListener(control);
+        vista.jbLimpiar.addActionListener(control);
     } 
 }

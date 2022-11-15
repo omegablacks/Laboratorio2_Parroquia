@@ -18,9 +18,16 @@ public class Iglesia {
         feligres = new ArrayList<>();
     }
 
-    public void agregarFeligres(Feligres f) {
+    public void agregarFeligres(Feligres f, String cedula) {
         f.validarDiesmo();
         feligres.add(f);
+        System.out.println("Usuario Guardado");
+        for (int i = 0; i < feligres.size(); i++) {
+            if (feligres.get(i).getCedula().equals(cedula)) {
+                f = feligres.get(i);
+            }
+        }
+        
     }
 
     public Feligres buscarFeligres(String cedula) {

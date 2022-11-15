@@ -1,6 +1,8 @@
 
 package Model;
 
+import java.util.Objects;
+
 public class Feligres{
     private String cedula;
     private String nombre;
@@ -96,6 +98,25 @@ public class Feligres{
     public void setCont(int cont) {
         this.cont = cont;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Feligres f = (Feligres) obj;
+        
+        if(this.getCedula().equals(f.getCedula()) && this.nombre.equals(f.getNombre()) && this.direccion.equals(f.direccion) &&
+                this.getTelefono().equals(f.telefono) && this.getEstrato().equals(f.estrato) && this.getEstado().equals(f.estado)){
+            return true;
+        }
+        return false;
+    }
+    
+    
 
     @Override
     public String toString() {
